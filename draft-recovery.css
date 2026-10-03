@@ -1,0 +1,72 @@
+/* Isolated consumer only; use the existing blue/white panels and typography.
+   Never shrink the draft controls to fit a fixed-height application viewport. */
+body.staging-draft-view .shell-student-fit,
+body.staging-draft-view .shell-stage-viewport {
+  height: auto !important; max-height: none !important; overflow: visible !important;
+}
+body.staging-draft-view .shell-stage {
+  position: static !important; width: 100% !important; transform: none !important;
+}
+#staging-drafts, .draft-closed, #staging-draft-dialog, .draft-standalone {
+  box-sizing: border-box; color: #172d50; background: #fff; font: inherit;
+  text-align: left; overflow-wrap: anywhere;
+}
+#staging-drafts {
+  margin-top: 24px; padding: clamp(14px, 2.2vw, 26px);
+  border: 1px solid #b8d0f5; border-radius: 18px; min-width: 0;
+  box-shadow: 0 7px 18px #173c7610;
+}
+#staging-drafts * { box-sizing: border-box; min-width: 0; }
+#staging-drafts h2 { font-size: 1.45rem; margin: 2px 0 8px; padding: 0; }
+#staging-drafts h2::before { display: none; }
+#staging-drafts h3 { font-size: 1.15rem; margin: 16px 0 10px; }
+#staging-drafts h4 { font-size: 1rem; margin: 0 0 8px; }
+#staging-drafts p, #staging-draft-dialog p, .draft-closed p { line-height: 1.5; margin: 8px 0; }
+#staging-drafts .draft-kicker { font-size: .75rem; color: #345b91; font-weight: 800; letter-spacing: .1em; }
+#staging-drafts .draft-intro, #draft-text-hint, #draft-privacy, .draft-footer p { color: #425875; font-size: .9rem; }
+#staging-draft-status { padding: 14px; background: #edf4ff; border-left: 4px solid #235bb2; border-radius: 6px; }
+#staging-draft-status[data-state="CONFIRMED_SERVER"] { background: #e9f7ee; border-color: #276d45; }
+#staging-draft-status[data-state="REVIEW_REQUIRED"],
+#staging-draft-status[data-state="OUTCOME_UNKNOWN"],
+#staging-draft-status[data-state="DRAFT_LOCAL_TEXT_CONFLICT"] { background: #fff3dc; border-color: #966012; }
+#staging-drafts button, #staging-draft-dialog button {
+  font: inherit; font-weight: 700; white-space: normal; line-height: 1.35;
+  min-height: 44px; padding: 11px 16px; border-radius: 10px; cursor: pointer;
+  max-width: 100%; overflow-wrap: anywhere; box-shadow: none; margin: 0;
+}
+#staging-drafts button.primary, #staging-draft-dialog button.primary { color: white; background: #124dc3; border: 2px solid #124dc3; }
+#staging-drafts button.secondary, #staging-draft-dialog button.secondary { color: #16448d; background: #f3f7ff; border: 2px solid #b8cef1; }
+#staging-drafts button:disabled { color: #45566d; background: #edf0f4; border-color: #c8d0dc; cursor: default; opacity: 1; }
+#staging-drafts :is(button,textarea,summary,h3):focus-visible,
+#staging-draft-dialog button:focus-visible, .draft-closed h1:focus-visible {
+  outline: 3px solid #061e58; outline-offset: 4px; box-shadow: 0 0 0 6px #fff;
+}
+#staging-drafts label { display: block; font-weight: 750; margin: 20px 0 4px; }
+#staging-drafts textarea { width: 100%; display: block; min-height: 144px; resize: vertical;
+  border: 2px solid #7895c5; border-radius: 10px; padding: 12px; color: #172d50; background: white; font: inherit; line-height: 1.5; }
+#staging-drafts [hidden] { display: none !important; }
+.draft-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
+.draft-opt { display: flex; align-items: center; gap: 14px; margin: 16px 0; }
+.draft-opt > * { flex: 1; }
+#staging-drafts summary { cursor: pointer; padding: 12px 4px; color: #16448d; min-height: 44px; }
+.draft-limits { border-bottom: 1px solid #d5e0f0; padding-bottom: 10px; }
+.draft-limits p { font-size: .9rem; }
+.draft-footer { border-top: 1px solid #d5e0f0; padding-top: 14px; margin-top: 20px; }
+.draft-pending-item, .draft-conflict { border: 1px solid #ced9e8; border-radius: 10px; padding: 14px; margin: 12px 0; }
+.draft-conflict { background: #fff9ed; border-color: #d6b875; }
+.draft-conflict > button { margin: 6px 8px 0 0 !important; }
+.draft-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+#staging-drafts pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 12px; border-radius: 6px; background: #f3f6fb; font-size: .9rem; }
+.draft-recovered { font-weight: 650; color: #28553b; }
+#staging-draft-dialog { width: min(540px, calc(100vw - 28px)); max-height: calc(100dvh - 40px);
+  overflow: auto; border: 1px solid #9db5da; border-radius: 18px; padding: 24px; }
+#staging-draft-dialog::backdrop { background: #0c193db3; }
+#staging-draft-dialog h2 { font-size: 1.3rem; line-height: 1.35; margin: 0 0 12px; }
+.draft-closed, .draft-standalone { width: min(650px, calc(100% - 32px)); margin: 32px auto; border-radius: 16px; padding: 24px; border: 1px solid #b8d0f5; }
+@media (max-width: 560px) {
+  .draft-opt { display: block; }
+  .draft-actions { flex-direction: column; }
+  #staging-drafts button, #staging-draft-dialog button { width: 100%; }
+  .draft-compare { grid-template-columns: 1fr; }
+  #staging-draft-dialog { padding: 18px; }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "label": "LAB elección",
+    "unit": "auth-integration-7e41b7f1a51441feb7d7ba1cf06b883d_LAB_CHOICE",
+    "contractVersion": "LAB_V1",
+    "contractHash": "62F0BDAA2967309FC63C1630B9AA8BFAC6E9212638A27B5B1017C2AB44DF495C",
+    "exerciseId": "auth-integration-7e41b7f1a51441feb7d7ba1cf06b883d_EXERCISE",
+    "partId": "P1",
+    "responseMode": "SINGLE_CHOICE"
+  },
+  {
+    "label": "LAB respuesta abierta",
+    "unit": "auth-integration-7e41b7f1a51441feb7d7ba1cf06b883d_LAB_OPEN",
+    "contractVersion": "LAB_V1",
+    "contractHash": "60B0C4CC35E8F8EA885CC1B236A28568FE13C1F041026252CBE2FFA73E4A135D",
+    "exerciseId": "auth-integration-7e41b7f1a51441feb7d7ba1cf06b883d_EXERCISE",
+    "partId": "P2",
+    "responseMode": "OPEN_RESPONSE"
+  }
+]
